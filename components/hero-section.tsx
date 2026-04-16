@@ -111,7 +111,7 @@ export function HeroSection() {
           </span>
           <span className="w-px h-3 bg-white/20" />
           <span className="text-xs font-medium text-white/80">
-            아름다운사람들 미사웰
+            아름다운사람들
           </span>
         </motion.div>
 

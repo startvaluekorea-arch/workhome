@@ -14,8 +14,8 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "미사웰(Misawell) - 사회적기업 아름다운사람들",
-  description: "책자, 리플렛, 웹진, PPT 등 디자인 인쇄 전문! 사회적기업 아름다운사람들 미사웰입니다.",
+  title: "사회적기업 아름다운사람들",
+  description: "책자, 리플렛, 웹진, PPT 등 디자인 인쇄 전문! 사회적기업 아름다운사람들입니다.",
 };
 
 export default function RootLayout({
