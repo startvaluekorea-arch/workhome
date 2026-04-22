@@ -9,32 +9,36 @@ interface CertItem {
   description: string;
   benefits?: string[];
   icon: React.ReactNode;
+  image: string;
 }
 
 const CERTS: CertItem[] = [
   {
-    title: "중증장애인생산품시설",
+    title: "중증장애인생산품시설 인증",
     description: "중증장애인들이 생산한 가치 있는 품질의 제품을 제공하는 시설로 인증받았습니다.",
     benefits: [
-      "수의계약 및 우선구매 1.1% 의무 달성",
+      "수의계약 및 우선구매 1.1% 의무 달성 (2026년 기준)",
       "고용부담금 감면으로 직접적인 비용 절약 (최대 50%)",
     ],
     icon: <ShieldCheck className="w-8 h-8 text-blue-600" />,
+    image: "/assets/certification/우선구매인증_중증장애인생산품시설지정서.png",
   },
   {
-    title: "장애인표준사업장",
+    title: "장애인표준사업장 인증",
     description: "장애인에게 안정된 일자리와 양질의 고용환경을 제공하는 표준사업장입니다.",
     benefits: [
-      "공공기관 우선구매 의무 대상 (총 구매액의 0.8% 이상)",
+      "공공기관 우선구매 의무 대상 (총 구매액의 0.8% 이상 / 2026년 기준)",
       "수의계약 체결 및 시행령에 따른 안정적 판로 확보",
     ],
     icon: <Award className="w-8 h-8 text-blue-600" />,
+    image: "/assets/certification/우선구매인증_장애인 표준사업장 인증서.png",
   },
   {
-    title: "사회적기업인증서",
+    title: "사회적기업 인증",
     description: "사회적 목적을 추구하며 영업활동을 수행하는 고용노동부 인증 사회적기업입니다.",
     benefits: ["공공기관 우선구매 및 구매 실적 자동 충족"],
     icon: <Heart className="w-8 h-8 text-blue-600" />,
+    image: "/assets/certification/우선구매인증_사회적기업인증서.png",
   },
 ];
 
@@ -80,7 +84,7 @@ export function CertificationsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group p-8 rounded-2xl border border-zinc-100 bg-zinc-50 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col"
+              className="group p-8 rounded-2xl border border-zinc-100 bg-zinc-50 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col relative"
             >
               <div className="mb-6 p-4 bg-white rounded-xl w-fit shadow-sm group-hover:scale-110 transition-transform">
                 {cert.icon}
@@ -104,12 +108,24 @@ export function CertificationsSection() {
                 </div>
               )}
               
-              <div className="mt-auto">
-                {/* Image Placeholder */}
-                <div className="aspect-[3/4] bg-zinc-200 rounded-lg overflow-hidden flex items-center justify-center border-2 border-dashed border-zinc-300 text-zinc-400 group-hover:border-blue-400 group-hover:text-blue-400 transition-colors">
-                  <p className="text-xs font-medium text-center px-4">인증서 이미지<br/>(추후 삽입 가능)</p>
+              <div className="mt-auto mb-6">
+                <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden flex items-center justify-center border border-zinc-200 group-hover:border-blue-200 transition-colors shadow-inner relative">
+                  <img 
+                    src={cert.image} 
+                    alt={cert.title}
+                    className="w-full h-full object-contain p-2"
+                  />
+                  <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 </div>
               </div>
+
+              <a 
+                href="/certifications" 
+                className="w-full py-3 bg-zinc-100 group-hover:bg-blue-600 group-hover:text-white text-zinc-600 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2"
+              >
+                상세 정보 보기
+                <Award className="w-3.5 h-3.5" />
+              </a>
             </motion.div>
           ))}
         </div>

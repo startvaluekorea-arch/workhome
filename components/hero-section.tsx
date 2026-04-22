@@ -2,19 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Play, Menu, X } from "lucide-react";
+import { ArrowUpRight, Play } from "lucide-react";
+import { SiteHeader } from "./site-header";
 
 interface NavLink {
   label: string;
   href: string;
 }
-
-const NAV_LINKS: NavLink[] = [
-  { label: "회사소개", href: "#about" },
-  { label: "인증현황", href: "#cert" },
-  { label: "포트폴리오", href: "#portfolio" },
-  { label: "멀티미디어", href: "#media" },
-];
 
 const BACKGROUND_IMAGES = [
   "/assets/background_img/main-visual1.jpg",
@@ -25,7 +19,6 @@ const BACKGROUND_IMAGES = [
 
 export function HeroSection() {
   const [index, setIndex] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -62,41 +55,7 @@ export function HeroSection() {
       </div>
 
       {/* Header / Navigation */}
-      <header className="relative z-50 py-6 px-6 lg:px-12 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {/* Logo Placeholder - User can replace later */}
-          <div className="text-white font-serif text-2xl font-bold tracking-tighter">
-            사단법인 아름다운사람들
-          </div>
-        </div>
-
-        <nav className="hidden md:flex items-center gap-1 bg-white/5 backdrop-blur-md rounded-full px-2 py-1.5 ring-1 ring-white/10">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#inquiry"
-            className="ml-2 px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold rounded-full transition-all flex items-center gap-2 shadow-lg shadow-orange-500/20"
-          >
-            견적문의
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </header>
+      <SiteHeader transparent />
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full -mt-20 px-6 text-center">
