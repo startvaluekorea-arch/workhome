@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
 import { SiteHeader } from "./site-header";
+import Link from "next/link";
 
 interface NavLink {
   label: string;
@@ -100,10 +101,12 @@ export function HeroSection() {
           transition={{ delay: 1.1, duration: 1 }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <button className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full border border-white/15 backdrop-blur transition-all flex items-center gap-3 group">
-            포트폴리오 보기
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+          <Link href="/portfolio">
+            <button className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full border border-white/15 backdrop-blur transition-all flex items-center gap-3 group">
+              포트폴리오 보기
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </Link>
           <button className="px-8 py-4 bg-transparent hover:text-white text-white/80 transition-all flex items-center gap-3">
             <Play className="w-4 h-4 text-orange-400" />
             회사 소개
