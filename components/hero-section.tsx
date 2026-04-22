@@ -64,9 +64,9 @@ export function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full -mt-20 px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
           className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20 backdrop-blur"
         >
           <span className="text-xs font-bold text-orange-400 uppercase tracking-widest">
@@ -79,9 +79,9 @@ export function HeroSection() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
           className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] mb-8"
         >
           상상이 가치가 되는
@@ -90,18 +90,18 @@ export function HeroSection() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
           className="text-white/70 max-w-2xl text-lg mb-12"
         >
           디자인, 인쇄, 출판 전문 사회적기업으로서 사람과 자연을 생각하는 가치 있는 결과물을 만듭니다.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <Link href="/portfolio">
