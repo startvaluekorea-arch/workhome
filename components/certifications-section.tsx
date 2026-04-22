@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Award, ShieldCheck, Heart } from "lucide-react";
+import Image from "next/image";
 
 interface CertItem {
   title: string;
@@ -109,11 +110,12 @@ export function CertificationsSection() {
               )}
               
               <div className="mt-auto mb-6">
-                <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden flex items-center justify-center border border-zinc-200 group-hover:border-blue-200 transition-colors shadow-inner relative">
-                  <img 
+                <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden border border-zinc-200 group-hover:border-blue-200 transition-colors shadow-inner relative">
+                  <Image 
                     src={cert.image} 
                     alt={cert.title}
-                    className="w-full h-full object-contain p-2"
+                    fill
+                    className="object-contain p-2"
                   />
                   <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 </div>

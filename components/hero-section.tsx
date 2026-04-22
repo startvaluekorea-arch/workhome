@@ -6,6 +6,8 @@ import { ArrowUpRight, Play } from "lucide-react";
 import { SiteHeader } from "./site-header";
 import Link from "next/link";
 
+import Image from "next/image";
+
 interface NavLink {
   label: string;
   href: string;
@@ -41,13 +43,14 @@ export function HeroSection() {
             transition={{ duration: 1, ease: "easeInOut" }}
             className="absolute inset-0 h-full w-full"
           >
-            <motion.img
+            <Image
               src={BACKGROUND_IMAGES[index]}
               alt={`Misawell Background ${index + 1}`}
-              className="w-full h-full object-cover"
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.1 }}
-              transition={{ duration: 4, ease: "linear" }}
+              fill
+              priority={index === 0}
+              className="object-cover"
+              sizes="100vw"
+              quality={85}
             />
           </motion.div>
         </AnimatePresence>
